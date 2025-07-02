@@ -27,7 +27,7 @@ export interface Bill {
   providedIn: 'root',
 })
 export class BillService {
-  private apiUrl = 'http://localhost:10000/api/bills'; // correct path
+  private apiUrl = 'https://filibustr-api.onrender.com/api/bills';
 
   constructor(private http: HttpClient) {}
 
