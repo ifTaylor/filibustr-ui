@@ -1,0 +1,22 @@
+<div class="p-4 max-w-xl mx-auto">
+  <mat-form-field appearance="outline" class="w-full mb-4">
+    <mat-label>Bill Title</mat-label>
+    <input matInput placeholder="Title of your bill">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-full mb-4">
+    <mat-label>Bill Summary</mat-label>
+    <textarea matInput rows="6" placeholder="What does your bill propose?"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-full mb-6">
+    <mat-label>Category</mat-label>
+    <mat-select>
+      <mat-option value="education">Education</mat-option>
+      <mat-option value="healthcare">Healthcare</mat-option>
+      <mat-option value="environment">Environment</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="w-full">Submit</button>
+</div>
