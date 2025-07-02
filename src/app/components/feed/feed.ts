@@ -10,7 +10,13 @@ import { BillService, Bill } from '../../services/bill';
   templateUrl: './feed.html',
 })
 export class Feed {
-  bills: { id: string; title: string; summary: string }[] = [];
+  bills: {
+    id: string;
+    title: string;
+    summary: string;
+    introduced_date: string;
+    current_status: string;
+  }[] = [];
   limit = 5;
   offset = 0;
   isLoading = false;
@@ -27,6 +33,8 @@ export class Feed {
           id: b.number.toString(),
           title: b.title,
           summary: b.summary ?? '',
+          introduced_date: b.introduced_date,
+          current_status: b.current_status,
         }));
         this.bills = [...this.bills, ...normalized];
         this.offset += this.limit;

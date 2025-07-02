@@ -1,6 +1,14 @@
 <div class="p-4 bg-white rounded shadow">
+  <div class="flex justify-between items-start text-gray-600 mb-2">
+    <p class="mt-1">{{ bill.id }} - {{ bill.introduced_date }}</p>
+
+    <div class="text-right">
+      <p class="mt-1">{{ snakeToTitleCase(bill.current_status) }}</p>
+    </div>
+  </div>
+
   <h2 class="text-lg font-semibold">{{ bill.title }}</h2>
   <p class="text-gray-600 mt-1">{{ bill.summary }}</p>
 
-  <app-vote-panel [billId]="bill.id" class="mt-4" />
+  <app-vote-panel [billId]="bill.id" class="mt-4"></app-vote-panel>
 </div>
