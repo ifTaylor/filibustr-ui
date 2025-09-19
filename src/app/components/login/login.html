@@ -1,0 +1,72 @@
+<div class="max-w-sm mx-auto p-4 space-y-3 bg-surface rounded-xl border border-primary/20">
+    @if (mode() === 'login') {
+        <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-primary">Sign in</h2>
+            <button
+                    type="button"
+                    class="text-onSurface hover:text-accent text-lg font-bold"
+                    (click)="closeLogIn()"
+            >
+                ✕
+            </button>
+        </div>
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Username" [(ngModel)]="username" autocomplete="username">
+
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Password" type="password" [(ngModel)]="password" autocomplete="current-password">
+
+        <button class="px-3 py-2 rounded bg-primary text-onPrimary w-full"
+                (click)="login()" [disabled]="loading()">
+            {{ loading() ? 'Signing in…' : 'Sign in' }}
+        </button>
+
+        <div class="text-sm text-onSurface/80">
+            Don’t have an account?
+            <button class="underline text-blueLight hover:opacity-80" (click)="switchToSignup()" [disabled]="loading()">
+                Create one
+            </button>
+        </div>
+
+        @if (error()) { <p class="text-error text-sm">{{ error() }}</p> }
+        @if (success()) { <p class="text-success text-sm">Login successful ✅</p> }
+    } @else {
+        <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-primary">Create Account</h2>
+            <button
+                    type="button"
+                    class="text-onSurface hover:text-accent text-lg font-bold"
+                    (click)="closeLogIn()"
+            >
+                ✕
+            </button>
+        </div>
+
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Username" [(ngModel)]="suUsername" autocomplete="username">
+
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Email" [(ngModel)]="suEmail" autocomplete="email">
+
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Password" type="password" [(ngModel)]="suPassword" autocomplete="new-password">
+
+        <input class="w-full border rounded px-3 py-2"
+               placeholder="Confirm password" type="password" [(ngModel)]="suConfirm" autocomplete="new-password">
+
+        <button class="px-3 py-2 rounded bg-primary text-onPrimary w-full"
+                (click)="createAccount()" [disabled]="loading()">
+            {{ loading() ? 'Creating…' : 'Create account' }}
+        </button>
+
+        <div class="text-sm text-onSurface/80">
+            Already have an account?
+            <button class="underline text-blueLight hover:opacity-80" (click)="switchToLogin()" [disabled]="loading()">
+                Back to sign in
+            </button>
+        </div>
+
+        @if (error()) { <p class="text-error text-sm">{{ error() }}</p> }
+        @if (success()) { <p class="text-success text-sm">Account created 🎉</p> }
+    }
+</div>

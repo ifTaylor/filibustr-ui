@@ -1,16 +1,22 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-primary text-onPrimary shadow">
-  <div class="w-full max-w-screen-md mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="w-full px-20 py-3 flex justify-between items-center">
 
-    <!-- Branding -->
-    <div class="flex items-center gap-2">
-      <mat-icon fontIcon="gavel" class="text-gold"></mat-icon>
-      <span class="text-xl font-semibold tracking-tight">Filibustr</span>
+        <div class="flex items-center gap-2 cursor-pointer" routerLink="/">
+            <mat-icon fontIcon="gavel" class="text-gold"></mat-icon>
+            <span class="text-xl font-semibold tracking-tight">Filibustr</span>
+        </div>
+
+        <div class="flex items-center gap-3">
+            @if (auth.user()) {
+                <span class="text-onPrimary/80">Hello, {{ auth.user() }}</span>
+                <button mat-flat-button class="!bg-onPrimary !text-primary" (click)="logout()">
+                    Log Out
+                </button>
+            } @else {
+                <button mat-flat-button class="!bg-onPrimary !text-primary" (click)="openLogin()">
+                    Log In
+                </button>
+            }
+        </div>
     </div>
-
-    <!-- Call to Action -->
-    <button mat-flat-button color="accent" routerLink="/create">
-      Propose a BillService
-    </button>
-
-  </div>
 </header>

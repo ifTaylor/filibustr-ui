@@ -1,7 +1,7 @@
 <section>
     <div class="max-w-3xl mx-auto p-4 space-y-4">
         <div class="flex items-center justify-between">
-            <h2 class="text-2xl font-semibold text-primary">Discussion Feed</h2>
+            <h2 class="text-2xl font-semibold text-primary">Articles</h2>
                 <button
                         class="px-3 py-1 rounded-lg border border-primary/30 text-onSurface hover:bg-primary hover:text-onPrimary transition"
                         (click)="refresh()"
@@ -37,9 +37,8 @@
                 </time>
             </header>
 
-            <!-- raw markdown for now; swap to your MarkdownPipe when ready -->
             <div class="prose max-w-none text-onSurface whitespace-pre-wrap">
-                {{ post.content }}
+                <div class="prose max-w-none text-onSurface" [innerHTML]="post.content | markdown"></div>
             </div>
 
             <footer class="flex gap-4 mt-3 text-sm">

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ArticleService, Post } from '../../services/article.service';
 import { AdSlot } from '../../components/ad-slot/ad-slot';
 import { catchError, of, tap } from 'rxjs';
+import {MarkdownPipe} from "../../services/markdown.pipe";
 
 @Component({
     standalone: true,
     selector: 'app-feed',
-    imports: [CommonModule, AdSlot],
+    imports: [CommonModule, AdSlot, MarkdownPipe],
     templateUrl: './feed.html',
 })
 export class Feed {

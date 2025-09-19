@@ -30,7 +30,7 @@ type AuthOpts = { withCreds?: boolean; token?: string };
 @Injectable({ providedIn: 'root' })
 export class ArticleService {
     private http = inject(HttpClient);
-    private readonly baseUrl = '/api/forum/forum';
+    private readonly baseUrl = 'https://filibustr-api.onrender.com/api/forum/forum';
 
     private auth(opts?: AuthOpts) {
         const headers = opts?.token
