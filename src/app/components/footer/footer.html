@@ -1,18 +1,23 @@
 <footer class="fixed bottom-0 left-0 right-0 z-50 bg-surface text-onSurface border-t border-gold">
   <div class="mx-auto w-full max-w-screen-md flex justify-around items-center px-4 py-2 overflow-x-auto">
-
     <button mat-button routerLink="/" class="flex flex-col items-center text-onSurface hover:text-primary">
+      <div class="pl-1">
       <mat-icon>home</mat-icon>
+      </div>
       <span class="text-xs">Feed</span>
     </button>
 
     <button mat-button routerLink="/create-article" class="flex flex-col items-center text-onSurface hover:text-primary">
-      <mat-icon>edit</mat-icon>
-      <span class="text-xs">Propose</span>
+        <div class="pl-1">
+            <mat-icon>edit</mat-icon>
+        </div>
+      <span class="text-xs">Create</span>
     </button>
 
     <button mat-button routerLink="/profile" class="flex flex-col items-center text-onSurface hover:text-primary">
-      <mat-icon>person</mat-icon>
+        <div class="pl-1">
+            <mat-icon>person</mat-icon>
+        </div>
       <span class="text-xs">Profile</span>
     </button>
 
