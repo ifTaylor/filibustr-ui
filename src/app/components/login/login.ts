@@ -100,8 +100,11 @@ export class Login {
                 },
                 error: (e) => {
                     this.loading.set(false);
-                    this.error.set('Could not create account');
-                },
+                    const d = e?.error?.detail;
+                    this.error.set(typeof d === 'string'
+                        ? d
+                        : Array.isArray(d) ? d.map((x:any)=>x.msg).join(', ') : 'Could not create account');
+                }
             });
     }
 }
