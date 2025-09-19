@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BillCard } from './bill-card/bill-card';
 import { BillService, Bill } from '../../services/bill';
+import { AdSlot} from "../ad-slot/ad-slot";
 
 @Component({
   standalone: true,
   selector: 'app-feed',
-  imports: [CommonModule, BillCard],
+  imports: [CommonModule, BillCard, AdSlot],
   templateUrl: './feed.html',
 })
 export class Feed {

@@ -1,0 +1,19 @@
+<div class="w-full flex justify-center">
+    @if (!_loaded()) {
+        <div
+                class="w-full bg-gray-200 dark:bg-neutral-800 animate-pulse rounded"
+                [style.max-width.px]="maxWidth()"
+                [style.height.px]="height()">
+        </div>
+    }
+    <ins #insEl
+         class="adsbygoogle block w-full"
+         [attr.data-ad-client]="adClient()"
+         [attr.data-ad-slot]="adSlot()"
+         [attr.data-ad-format]="adFormat()"
+         [attr.data-ad-layout]="adLayout() ?? (adFormat() === 'fluid' ? 'in-article' : null)"
+         [attr.data-full-width-responsive]="fullWidthResponsive() ? 'true' : 'false'"
+         [attr.data-adtest]="adTest() ? 'on' : null"
+         style="display:block; text-align:center;">
+    </ins>
+</div>
