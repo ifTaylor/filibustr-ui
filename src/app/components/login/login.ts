@@ -87,8 +87,6 @@ export class Login {
         this.error.set(null);
         this.success.set(false);
 
-        console.log(this.suUsername, this.suPassword, this.suConfirm, this.suEmail);
-
         this.auth
             .register(this.suUsername.trim(), this.suEmail.trim(), this.suPassword)
             .subscribe({
