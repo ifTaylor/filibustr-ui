@@ -1,0 +1,41 @@
+<div class="w-full">
+    <div class="flex items-center justify-between gap-3 mb-4">
+        <h2 class="text-xl font-semibold opacity-70">Write Article {{ title() || 'Untitled' }}</h2>
+        <div class="flex items-center gap-2">
+            <button
+                    type="button"
+                    (click)="onPost()"
+                    class="px-4 py-2 rounded bg-primary text-white hover:bg-primary-light"
+                    [disabled]="!title().trim() || !body().trim()"
+            >
+                Post
+            </button>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start w-full">
+        <div class="space-y-3">
+            <h3 class="text-sm font-semibold opacity-70">Body (Markdown supported)</h3>
+            <textarea
+                #editor
+                class="w-full h-[65vh] px-3 py-2 border rounded font-mono text-sm leading-6
+             outline-none focus:ring-2 focus:ring-primary overflow-auto
+             whitespace-pre-wrap"
+                [value]="body()"
+                (input)="body.set($any($event.target).value)"
+                (keydown)="handleTab($event)"
+                (scroll)="onEditorScroll()"
+                placeholder="Write your article in Markdown…"
+            ></textarea>
+        </div>
+        <div>
+            <h3 class="text-sm font-semibold mb-3 opacity-70">Preview</h3>
+            <div
+                #preview
+                class="border rounded p-4 h-[65vh] bg-white overflow-auto"
+                (scroll)="onPreviewScroll()"
+            >
+                <div class="prose max-w-none" [innerHTML]="body() | markdown"></div>
+            </div>
+        </div>
+    </div>
+</div>

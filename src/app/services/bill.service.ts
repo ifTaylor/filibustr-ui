@@ -10,7 +10,7 @@ export interface Sponsor {
   state: string;
 }
 
-export interface Bill {
+export interface BillService {
   number: number;
   display_number: string;
   title: string;
@@ -31,9 +31,9 @@ export class BillService {
 
   constructor(private http: HttpClient) {}
 
-  getBills(limit = 10, offset = 0): Observable<Bill[]> {
+  getBills(limit = 10, offset = 0): Observable<BillService[]> {
     const params = { limit, offset };
-    return this.http.get<Bill[]>(this.apiUrl, { params });
+    return this.http.get<BillService[]>(this.apiUrl, { params });
   }
 }
 

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Feed } from './components/feed/feed';
-import { CreateBill } from './components/create-bill/create-bill';
+import { Feed } from './pages/feed/feed';
+import { ArticleCreation} from "./pages/article-creation/article-creation";
 
 export const routes: Routes = [
-  { path: '', component: Feed },
-  { path: 'create', component: CreateBill },
+    { path: '', component: Feed },
+    { path: 'create-article', component: ArticleCreation },
 ];

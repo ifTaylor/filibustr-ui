@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VotePanel } from '../../vote-panel/vote-panel';
+import { VotePanel } from '../vote-panel/vote-panel';
 
 @Component({
   selector: 'app-bill-card',
